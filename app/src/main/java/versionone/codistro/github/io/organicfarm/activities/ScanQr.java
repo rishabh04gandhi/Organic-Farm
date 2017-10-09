@@ -1,9 +1,12 @@
 package versionone.codistro.github.io.organicfarm.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -17,12 +20,12 @@ import versionone.codistro.github.io.organicfarm.utilityclasses.ParentClass;
 public class ScanQr extends AppCompatActivity {
 
     private Button scanButton;
+    public static final String FILE = "auth";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_qr);
         ActionBar bar = getSupportActionBar();
-        bar.setDisplayHomeAsUpEnabled(true);
         bar.setTitle("Scan QrCode");
 
         scanButton = (Button) findViewById(R.id.scan);
@@ -63,5 +66,22 @@ public class ScanQr extends AppCompatActivity {
             String[] parts = contents.split(",");
             ParentClass.id = parts[0];
             ParentClass.name = parts[1];
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.logout,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        SharedPreferences auth = getSharedPreferences(FILE,MODE_PRIVATE);
+        SharedPreferences.Editor editor = auth.edit();
+        editor.clear();
+        editor.apply();
+        Intent in = new Intent(ScanQr.this,LogIn.class);
+        startActivity(in);
+        return true;
     }
 }

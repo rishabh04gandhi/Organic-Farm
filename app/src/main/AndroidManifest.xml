@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.SelectTask">
+        <activity android:name=".activities.LogIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +21,7 @@
         </activity>
         <activity
             android:name=".activities.CustomersList"
-            android:parentActivityName=".activities.SelectTask" />
+            android:parentActivityName=".activities.LogIn" />
         <activity
             android:name=".activities.SelectMilkType"
             android:parentActivityName=".activities.CustomersList" />
@@ -32,15 +32,14 @@
             android:name=".activities.SaleDetails"
             android:parentActivityName=".activities.SelectMilkType" />
         <activity
-            android:name=".activities.AdminPanel"
-            android:parentActivityName=".activities.SelectTask" />
+            android:name=".activities.AdminPanel" />
         <activity
             android:name=".activities.UpdatePrice"
             android:parentActivityName=".activities.AdminPanel" />
         <activity
             android:name=".activities.CustomerBalanceDetails"
             android:parentActivityName=".activities.CustomersList" />
-        <activity android:name=".activities.ScanQr" android:parentActivityName=".activities.SelectTask"></activity>
+        <activity android:name=".activities.ScanQr"></activity>
     </application>
 
 </manifest>

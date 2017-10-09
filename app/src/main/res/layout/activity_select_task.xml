@@ -6,19 +6,37 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="versionone.codistro.github.io.organicfarm.activities.SelectTask">
+    tools:context="versionone.codistro.github.io.organicfarm.activities.LogIn">
 
-    <Button
-        android:id="@+id/admin"
-        android:layout_width="150dp"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Admin"
+        android:text="Log in"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textStyle="italic"
+        android:padding="20dp"
+        android:gravity="center_horizontal"
         />
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:hint="Username"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:padding="10dp"
+        android:inputType="textPassword"/>
 
     <Button
-        android:id="@+id/deliver"
-        android:layout_width="150dp"
+        android:id="@+id/login"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Deliver"/>
+        android:text="login"/>
 
 </LinearLayout>
