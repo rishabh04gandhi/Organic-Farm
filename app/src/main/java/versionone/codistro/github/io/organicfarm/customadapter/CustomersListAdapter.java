@@ -1,4 +1,4 @@
-package versionone.codistro.github.io.organicfarm;
+package versionone.codistro.github.io.organicfarm.customadapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import versionone.codistro.github.io.organicfarm.R;
+import versionone.codistro.github.io.organicfarm.utilityclasses.Customer;
 
 /**
  * Created by RAJAN on 04-10-2017.

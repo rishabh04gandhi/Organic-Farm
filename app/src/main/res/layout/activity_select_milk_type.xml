@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="versionone.codistro.github.io.organicfarm.SelectMilkType">
+    tools:context="versionone.codistro.github.io.organicfarm.activities.SelectMilkType">
 
     <Button
         android:id="@+id/cow"

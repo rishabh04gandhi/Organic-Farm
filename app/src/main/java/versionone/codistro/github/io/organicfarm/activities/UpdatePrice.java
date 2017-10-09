@@ -1,4 +1,4 @@
-package versionone.codistro.github.io.organicfarm;
+package versionone.codistro.github.io.organicfarm.activities;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +15,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import versionone.codistro.github.io.organicfarm.R;
+import versionone.codistro.github.io.organicfarm.utilityclasses.Price;
 
 public class UpdatePrice extends AppCompatActivity {
 

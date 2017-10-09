@@ -1,4 +1,4 @@
-package versionone.codistro.github.io.organicfarm;
+package versionone.codistro.github.io.organicfarm.activities;
 
 import android.app.Application;
 import android.content.Context;

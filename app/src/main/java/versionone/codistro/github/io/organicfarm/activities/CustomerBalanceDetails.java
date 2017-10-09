@@ -1,10 +1,9 @@
-package versionone.codistro.github.io.organicfarm;
+package versionone.codistro.github.io.organicfarm.activities;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -12,6 +11,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import versionone.codistro.github.io.organicfarm.R;
+import versionone.codistro.github.io.organicfarm.utilityclasses.Balance;
 
 public class CustomerBalanceDetails extends AppCompatActivity {
 

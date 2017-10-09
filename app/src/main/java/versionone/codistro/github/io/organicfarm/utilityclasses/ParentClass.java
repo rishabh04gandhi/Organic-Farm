@@ -1,4 +1,4 @@
-package versionone.codistro.github.io.organicfarm;
+package versionone.codistro.github.io.organicfarm.utilityclasses;
 
 /**
  * Created by RAJAN on 06-10-2017.

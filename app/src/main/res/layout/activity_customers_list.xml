@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="versionone.codistro.github.io.organicfarm.CustomersList">
+    tools:context="versionone.codistro.github.io.organicfarm.activities.CustomersList">
 
     <ListView
         android:id="@+id/customers_list"

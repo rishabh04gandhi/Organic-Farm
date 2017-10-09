@@ -1,4 +1,4 @@
-package versionone.codistro.github.io.organicfarm;
+package versionone.codistro.github.io.organicfarm.activities;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import versionone.codistro.github.io.organicfarm.R;
+import versionone.codistro.github.io.organicfarm.utilityclasses.Customer;
 
 public class RegisterCustomer extends AppCompatActivity {
 

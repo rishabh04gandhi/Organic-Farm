@@ -1,4 +1,4 @@
-package versionone.codistro.github.io.organicfarm;
+package versionone.codistro.github.io.organicfarm.activities;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -17,6 +17,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import versionone.codistro.github.io.organicfarm.R;
+import versionone.codistro.github.io.organicfarm.utilityclasses.Balance;
+import versionone.codistro.github.io.organicfarm.utilityclasses.ParentClass;
+import versionone.codistro.github.io.organicfarm.utilityclasses.Price;
+import versionone.codistro.github.io.organicfarm.utilityclasses.Sales;
 
 public class SaleDetails extends AppCompatActivity {
 
