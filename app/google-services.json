@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "530031613906",
+    "firebase_url": "https://fir-database-e5450.firebaseio.com",
+    "project_id": "fir-database-e5450",
+    "storage_bucket": "fir-database-e5450.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530031613906:android:4d914618f417da06",
+        "android_client_info": {
+          "package_name": "firebase.codistro.github.io.firebasedatabase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530031613906-cq708ql2nb4l5fdb03uaq2egn7k3av05.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "firebase.codistro.github.io.firebasedatabase",
+            "certificate_hash": "174dbef8ed77d2627ad68e6dad055bf0e4e5858d"
+          }
+        },
+        {
+          "client_id": "530031613906-ctj4jq8sevoc46d2o20g0l9a1vlqmskm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6OyPfRy_vE3J_Ia2fYMKbyVvibZWrfXo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530031613906-ctj4jq8sevoc46d2o20g0l9a1vlqmskm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530031613906:android:2ecf781e83437b21",
+        "android_client_info": {
+          "package_name": "firebase.codistro.github.io.firebasetutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530031613906-9chngn3oi1bidn7ki6nf9fte1nomm293.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "firebase.codistro.github.io.firebasetutorial",
+            "certificate_hash": "174dbef8ed77d2627ad68e6dad055bf0e4e5858d"
+          }
+        },
+        {
+          "client_id": "530031613906-ctj4jq8sevoc46d2o20g0l9a1vlqmskm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6OyPfRy_vE3J_Ia2fYMKbyVvibZWrfXo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530031613906-ctj4jq8sevoc46d2o20g0l9a1vlqmskm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530031613906:android:5f0da0d155a67af0",
+        "android_client_info": {
+          "package_name": "versionone.codistro.github.io.organicfarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530031613906-nskofv4t7htvjo73b5ne2uini3fr495g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "versionone.codistro.github.io.organicfarm",
+            "certificate_hash": "174dbef8ed77d2627ad68e6dad055bf0e4e5858d"
+          }
+        },
+        {
+          "client_id": "530031613906-ctj4jq8sevoc46d2o20g0l9a1vlqmskm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6OyPfRy_vE3J_Ia2fYMKbyVvibZWrfXo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530031613906-ctj4jq8sevoc46d2o20g0l9a1vlqmskm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

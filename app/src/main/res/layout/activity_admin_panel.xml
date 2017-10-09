@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="versionone.codistro.github.io.organicfarm.AdminPanel">
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:text="Register Customer"
+        />
+    <Button
+        android:id="@+id/update_price"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:text="update price"
+        />
+    <Button
+        android:id="@+id/view_details"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:text="view details"
+        />
+    <Button
+        android:id="@+id/generate"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:text="Generate Qr"/>
+
+</LinearLayout>
