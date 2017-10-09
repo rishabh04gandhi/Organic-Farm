@@ -55,7 +55,7 @@ public class RegisterCustomer extends AppCompatActivity {
         String name = nameEditText.getText().toString().trim();
         String mobile = mobileEditText.getText().toString().trim();
 
-        if(!TextUtils.isEmpty(name) && !TextUtils.isEmpty(mobile)){
+        if(!TextUtils.isEmpty(name) && !TextUtils.isEmpty(mobile) && mobile.length() == 10){
             String id = reference.push().getKey().toString();
             Customer customer = new Customer(id,name,mobile);
             reference.child(id).setValue(customer);
