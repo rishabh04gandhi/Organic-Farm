@@ -1,9 +1,12 @@
 package versionone.codistro.github.io.organicfarm.activities;
 
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.style.UpdateAppearance;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -58,7 +61,24 @@ public class UpdatePrice extends AppCompatActivity {
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updatePrice();
+                //AlertDialog to confirm the action
+                AlertDialog.Builder alert = new AlertDialog.Builder(UpdatePrice.this);
+                alert.setTitle("Confirm Action");
+                alert.setMessage("Are you sure?");
+                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //calling utility function updates price in database
+                        updatePrice();
+                    }
+                });
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(UpdatePrice.this,"Action Cancelled",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                alert.show();
             }
         });
 

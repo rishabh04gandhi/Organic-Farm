@@ -1,7 +1,9 @@
 package versionone.codistro.github.io.organicfarm.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -87,7 +89,25 @@ public class SaleDetails extends AppCompatActivity {
         deliverButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                deliverMilk();
+                //AlertDialog to confirm the action
+                AlertDialog.Builder alert = new AlertDialog.Builder(SaleDetails.this);
+                alert.setTitle("Confirm Action");
+                alert.setMessage("Are you sure?");
+                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //calling utility function that updates the sales in database
+                        deliverMilk();
+                    }
+                });
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(SaleDetails.this,"Action Cancelled",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                alert.show();
+
             }
         });
     }
