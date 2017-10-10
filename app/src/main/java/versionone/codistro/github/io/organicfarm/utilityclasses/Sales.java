@@ -11,17 +11,23 @@ public class Sales {
     private String id;
     private double quantity;
     private String type;
+    private double paid;
     private long date;
 
     public Sales(){
 
     }
 
-    public Sales(String id,double quantity,String type){
+    public Sales(String id,double quantity,double paid,String type){
         this.id = id;
         this.quantity = quantity;
+        this.paid = paid;
         this.type = type;
         this.date = new Date().getTime();
+    }
+
+    public double getPaid() {
+        return paid;
     }
 
     public String getId() {
