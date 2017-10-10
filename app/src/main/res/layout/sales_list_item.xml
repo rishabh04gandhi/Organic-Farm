@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        tools:text="27-10-2017"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/paid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Rs. 20"
+        android:textSize="16sp"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/date"/>
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="2L"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_dark"
+        android:padding="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Cow"
+        android:textSize="16sp"
+        android:paddingRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/quantity"/>
+
+</RelativeLayout>

@@ -20,38 +20,53 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/from"
+            android:layout_width="wrap_content"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:gravity="center"
+            android:hint="FROM"/>
         <TextView
             android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:layout_height="wrap_content"
-            android:text="Balance:"
-            android:textSize="20sp"/>
-        <TextView
-            android:id="@+id/balance"
+            android:text="to"/>
+        <EditText
+            android:id="@+id/to"
             android:layout_width="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:inputType="none"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:padding="10dp"
-            />
+            android:hint="TO"/>
     </LinearLayout>
 
-    <LinearLayout
+    <Button
+        android:id="@+id/details"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Total:"
-            android:textSize="20sp"/>
-        <TextView
-            android:id="@+id/total"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:padding="10dp"
-            />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:text="Get details"/>
+
+    <TextView
+        android:id="@+id/balance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Balance: Rs. 100"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/holo_red_dark"
+        android:gravity="center"/>
+
+    <ListView
+        android:id="@+id/customers_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+
 
 </LinearLayout>
