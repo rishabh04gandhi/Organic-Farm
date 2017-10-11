@@ -28,7 +28,7 @@ public class ScanQr extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_qr);
         ActionBar bar = getSupportActionBar();
-        bar.setTitle("Scan QrCode");
+        bar.setTitle(R.string.scanQr);
 
         scanButton = (Button) findViewById(R.id.scan);
 
@@ -61,14 +61,14 @@ public class ScanQr extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
         if(result != null){
             if(result.getContents() == null)
-                Toast.makeText(getApplicationContext(),"Something Went Wrong",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),R.string.something_wrong,Toast.LENGTH_SHORT).show();
             else {
                 if(extractData(result.getContents())) {
                     Intent in = new Intent(ScanQr.this, SelectMilkType.class);
                     startActivity(in);
                 }
                 else{
-                    Toast.makeText(getApplicationContext(),"Invalid Qr code",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),R.string.wrongQr,Toast.LENGTH_SHORT).show();
                 }
             }
         }

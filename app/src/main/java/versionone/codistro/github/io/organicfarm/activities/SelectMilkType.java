@@ -52,9 +52,9 @@ public class SelectMilkType extends AppCompatActivity {
     public void navigate(View v){
         Intent in = new Intent(SelectMilkType.this,SaleDetails.class);
         if(v.getId() == R.id.cow)
-            in.putExtra("type","cow");
+            in.putExtra("type",R.string.cow);
         else
-            in.putExtra("type","buffalo");
+            in.putExtra("type",R.string.buffalo);
         startActivity(in);
     }
 }

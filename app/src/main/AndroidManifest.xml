@@ -13,11 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.LogIn">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activities.CustomersList"
@@ -39,7 +35,13 @@
         <activity
             android:name=".activities.CustomerBalanceDetails"
             android:parentActivityName=".activities.CustomersList" />
-        <activity android:name=".activities.ScanQr"></activity>
+        <activity android:name=".activities.ScanQr">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

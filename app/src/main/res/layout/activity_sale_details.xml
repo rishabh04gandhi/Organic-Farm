@@ -31,7 +31,7 @@
             android:id="@+id/quantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Quantity"
+            android:hint="@string/quantity"
             android:inputType="numberDecimal"
             android:padding="10dp"
             />
@@ -43,7 +43,7 @@
         <TextView
             android:id="@+id/paid"
             android:paddingLeft="20dp"
-            android:text="Paid"
+            android:text="@string/paid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -52,7 +52,7 @@
             android:id="@+id/paid_rupee"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Rs."
+            android:hint="₹."
             android:inputType="numberDecimal"
             android:padding="10dp"
             />
@@ -64,7 +64,7 @@
         android:id="@+id/deliver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Deliver"/>
+        android:text="@string/deliver"/>
 
 
 

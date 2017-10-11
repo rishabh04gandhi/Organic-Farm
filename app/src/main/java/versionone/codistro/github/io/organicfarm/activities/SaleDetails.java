@@ -48,7 +48,7 @@ public class SaleDetails extends AppCompatActivity {
         setContentView(R.layout.activity_sale_details);
         ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
-        bar.setTitle("Enter Quantity");
+        bar.setTitle(R.string.enter_quntity);
 
         //getting info from previos activity about type of milk
         Intent in = getIntent();
@@ -106,9 +106,9 @@ public class SaleDetails extends AppCompatActivity {
             public void onClick(View v) {
                 //AlertDialog to confirm the action
                 AlertDialog.Builder alert = new AlertDialog.Builder(SaleDetails.this);
-                alert.setTitle("Confirm Action");
+                alert.setTitle(R.string.confirm);
                 alert.setMessage("Are you sure?");
-                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                alert.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if(isInternetConnected(SaleDetails.this)) {
@@ -116,14 +116,14 @@ public class SaleDetails extends AppCompatActivity {
                             deliverMilk();
                         }
                         else{
-                            Toast.makeText(SaleDetails.this,"No Internet",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SaleDetails.this,R.string.no_internet,Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
-                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                alert.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(SaleDetails.this,"Action Cancelled",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SaleDetails.this,R.string.action_cancelled,Toast.LENGTH_SHORT).show();
                     }
                 });
                 alert.show();
@@ -145,7 +145,7 @@ public class SaleDetails extends AppCompatActivity {
         String paid = paidEditText.getText().toString().trim();
 
         if(TextUtils.isEmpty(quantity) || Double.valueOf(quantity) == 0)// if quantity is empty block update
-            Toast.makeText(getApplicationContext(),"Invalid Quantity",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),R.string.invalid_quantity,Toast.LENGTH_SHORT).show();
         else {
             Double newBalance = null;
             Double p = null;
@@ -182,7 +182,7 @@ public class SaleDetails extends AppCompatActivity {
                 referenceBalance.child(id).setValue(balance1);
 
                 referenceSales.child(newId).setValue(s);
-                Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),R.string.updated, Toast.LENGTH_SHORT).show();
                 Intent in = new Intent(SaleDetails.this,ScanQr.class);
                 startActivity(in);
             }else{ //If no previous balance found update fresh
@@ -195,7 +195,7 @@ public class SaleDetails extends AppCompatActivity {
                 referenceBalance.child(id).setValue(balance1);
 
                 referenceSales.child(newId).setValue(s);
-                Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),R.string.updated, Toast.LENGTH_SHORT).show();
                 Intent in = new Intent(SaleDetails.this,ScanQr.class);
                 startActivity(in);
             }
