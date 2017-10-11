@@ -28,6 +28,7 @@ public class SelectMilkType extends AppCompatActivity {
         id = intent.getStringExtra("id");
         name = intent.getStringExtra("name");
 
+        buffalo.setVisibility(View.GONE);
         cow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

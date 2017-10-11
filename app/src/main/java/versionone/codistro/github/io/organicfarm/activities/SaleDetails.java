@@ -1,7 +1,10 @@
 package versionone.codistro.github.io.organicfarm.activities;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.annotation.IntegerRes;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
@@ -108,8 +111,13 @@ public class SaleDetails extends AppCompatActivity {
                 alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //calling utility function that updates the sales in database
-                        deliverMilk();
+                        if(isInternetConnected(SaleDetails.this)) {
+                            //calling utility function that updates the sales in database
+                            deliverMilk();
+                        }
+                        else{
+                            Toast.makeText(SaleDetails.this,"No Internet",Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
                 alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -122,6 +130,12 @@ public class SaleDetails extends AppCompatActivity {
 
             }
         });
+    }
+
+    public static boolean isInternetConnected(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
     }
 
     private void deliverMilk() {
