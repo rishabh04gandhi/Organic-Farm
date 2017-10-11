@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +22,7 @@ public class ScanQr extends AppCompatActivity {
 
     private Button scanButton;
     public static final String FILE = "auth";
+    public static final String USERNAME = "username";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,15 +47,29 @@ public class ScanQr extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        SharedPreferences auth = getSharedPreferences(FILE,MODE_PRIVATE);
+        if(auth.getString(USERNAME,null) == null) {
+            Intent in = new Intent(ScanQr.this, LogIn.class);
+            startActivity(in);
+        }
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
         if(result != null){
             if(result.getContents() == null)
                 Toast.makeText(getApplicationContext(),"Something Went Wrong",Toast.LENGTH_SHORT).show();
             else {
-                extractData(result.getContents());
-                Intent in = new Intent(ScanQr.this,SelectMilkType.class);
-                startActivity(in);
+                if(extractData(result.getContents())) {
+                    Intent in = new Intent(ScanQr.this, SelectMilkType.class);
+                    startActivity(in);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Invalid Qr code",Toast.LENGTH_SHORT).show();
+                }
             }
         }
 
@@ -62,10 +78,16 @@ public class ScanQr extends AppCompatActivity {
     }
 
     //extracting data from QR and starting new Activity
-    private void extractData(String contents) {
+    private boolean extractData(String contents) {
             String[] parts = contents.split(",");
+            if(parts.length != 2)
+                return false;
             ParentClass.id = parts[0];
             ParentClass.name = parts[1];
+            if(ParentClass.id.charAt(0) == '-')
+                return true;
+            else
+                return false;
     }
 
     @Override

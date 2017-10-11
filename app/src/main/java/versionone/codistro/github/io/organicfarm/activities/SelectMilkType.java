@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import versionone.codistro.github.io.organicfarm.R;
 
@@ -40,6 +41,11 @@ public class SelectMilkType extends AppCompatActivity {
                 navigate(v);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(),"Back Disabled",Toast.LENGTH_SHORT).show();
     }
 
     public void navigate(View v){

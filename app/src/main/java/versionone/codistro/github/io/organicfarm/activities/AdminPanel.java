@@ -20,6 +20,7 @@ public class AdminPanel extends AppCompatActivity {
     private Button viewDetailButton;
     private Button generateQrButton;
     public static final String FILE = "auth";
+    public static final String USERNAME = "username";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +66,18 @@ public class AdminPanel extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        SharedPreferences auth = getSharedPreferences(FILE,MODE_PRIVATE);
+        if(auth.getString(USERNAME,null) == null) {
+            Intent in = new Intent(AdminPanel.this, LogIn.class);
+            startActivity(in);
+        }
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

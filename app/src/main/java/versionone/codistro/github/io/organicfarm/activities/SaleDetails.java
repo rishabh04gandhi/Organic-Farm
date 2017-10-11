@@ -130,7 +130,7 @@ public class SaleDetails extends AppCompatActivity {
         String quantity = quantityEditText.getText().toString().trim();
         String paid = paidEditText.getText().toString().trim();
 
-        if(TextUtils.isEmpty(quantity))// if quantity is empty block update
+        if(TextUtils.isEmpty(quantity) || Double.valueOf(quantity) == 0it a)// if quantity is empty block update
             Toast.makeText(getApplicationContext(),"Invalid Quantity",Toast.LENGTH_SHORT).show();
         else {
             Double newBalance = null;
