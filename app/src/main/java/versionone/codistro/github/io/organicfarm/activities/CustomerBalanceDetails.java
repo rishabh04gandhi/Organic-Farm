@@ -124,8 +124,11 @@ public class CustomerBalanceDetails extends AppCompatActivity {
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
                     sales = data.getValue(Sales.class);
+                    Long d = sales.getDate();
+                    Log.v("timeStamp",fromTimeStamp +" "+d+" "+toTimeStamp);
                     if (sales.getDate() >= fromTimeStamp && sales.getDate() <= toTimeStamp) {
                         salesArrayList.add(sales);
                         adapter.notifyDataSetChanged();
@@ -148,9 +151,8 @@ public class CustomerBalanceDetails extends AppCompatActivity {
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         calendar.set(year,month,day,0,0,0);
         fromTimeStamp = calendar.getTimeInMillis();
+        calendar.set(year,month,day,23,59,59);
         toTimeStamp = calendar.getTimeInMillis();
-        //fromEditText.setText(Long.valueOf(fromTimeStamp).toString());
-        //toEditText.setText(Long.valueOf(toTimeStamp).toString());
         month = month + 1;
         fromEditText.setText(day + "-" + month + "-" + year);
         toEditText.setText(day+"-"+month+"-"+year);
@@ -164,17 +166,15 @@ public class CustomerBalanceDetails extends AppCompatActivity {
         DatePickerDialog date = new DatePickerDialog(CustomerBalanceDetails.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                calendar.set(Calendar.YEAR,year);
-                calendar.set(Calendar.MONTH,month);
-                calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
-                calendar.set(year,month,Calendar.DAY_OF_MONTH,00,00,00);
+
                 if(v.getId() == R.id.from) {
+                    calendar.set(year,month,dayOfMonth,00,00,00);
                     month = month + 1;
                     fromEditText.setText(dayOfMonth + "-" + month + "-" + year);
                     fromTimeStamp = calendar.getTimeInMillis();
-                    //fromEditText.setText(Long.valueOf(fromTimeStamp).toString());
                 }
-                else{
+                else if(v.getId() == R.id.to){
+                    calendar.set(year,month,dayOfMonth,23,59,59);
                     month = month + 1;
                     toEditText.setText(dayOfMonth+"-"+month+"-"+year);
                     toTimeStamp = calendar.getTimeInMillis();
