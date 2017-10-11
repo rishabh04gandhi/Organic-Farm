@@ -22,6 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 
 import versionone.codistro.github.io.organicfarm.R;
 import versionone.codistro.github.io.organicfarm.customadapter.SalesCustomAdapter;
@@ -131,6 +133,16 @@ public class CustomerBalanceDetails extends AppCompatActivity {
                     Log.v("timeStamp",fromTimeStamp +" "+d+" "+toTimeStamp);
                     if (sales.getDate() >= fromTimeStamp && sales.getDate() <= toTimeStamp) {
                         salesArrayList.add(sales);
+                        Collections.sort(salesArrayList, new Comparator<Sales>() {
+                            @Override
+                            public int compare(Sales p1, Sales p2) {
+                                if((p1.getDate() - p2.getDate()) > 0)
+                                    return 1;
+                                else
+                                    return -1;
+                            }
+
+                        });
                         adapter.notifyDataSetChanged();
                     }
                 }
