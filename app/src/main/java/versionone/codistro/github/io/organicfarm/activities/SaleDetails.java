@@ -14,6 +14,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,6 +50,21 @@ public class SaleDetails extends AppCompatActivity {
         ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
         bar.setTitle(R.string.enter_quntity);
+
+        //checking if internet is connected
+        if(!isInternetConnected(SaleDetails.this)){
+            //AlertDialog to show no internet the action
+            AlertDialog.Builder alert = new AlertDialog.Builder(SaleDetails.this);
+            alert.setMessage(R.string.no_internet);
+            alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                        Intent in = new Intent(SaleDetails.this,ScanQr.class);
+                        startActivity(in);
+                }
+            });
+            alert.show();
+        }
 
         //getting info from previos activity about type of milk
         Intent in = getIntent();
@@ -98,7 +114,7 @@ public class SaleDetails extends AppCompatActivity {
 
         //setting name and milk type to the views
         nameTextView.setText(name);
-        milkTypeTextView.setText(milkType);
+        milkTypeTextView.setText(R.string.cow);
 
         //on clik for the delivery button
         deliverButton.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +123,7 @@ public class SaleDetails extends AppCompatActivity {
                 //AlertDialog to confirm the action
                 AlertDialog.Builder alert = new AlertDialog.Builder(SaleDetails.this);
                 alert.setTitle(R.string.confirm);
-                alert.setMessage("Are you sure?");
+                alert.setMessage(R.string.sure);
                 alert.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

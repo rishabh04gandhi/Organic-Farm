@@ -1,7 +1,13 @@
 package versionone.codistro.github.io.organicfarm.activities;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,6 +56,21 @@ public class CustomerBalanceDetails extends AppCompatActivity {
         final ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
         bar.setTitle("Customer Balance Details");
+
+        //checking if internet is connected
+        if(!isInternetConnected(CustomerBalanceDetails.this)){
+            //AlertDialog to show no internet the action
+            AlertDialog.Builder alert = new AlertDialog.Builder(CustomerBalanceDetails.this);
+            alert.setMessage(R.string.no_internet);
+            alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent in = new Intent(CustomerBalanceDetails.this,AdminPanel.class);
+                    startActivity(in);
+                }
+            });
+            alert.show();
+        }
 
         fromEditText = (EditText) findViewById(R.id.from);
         toEditText = (EditText) findViewById(R.id.to);
@@ -130,7 +151,6 @@ public class CustomerBalanceDetails extends AppCompatActivity {
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
                     sales = data.getValue(Sales.class);
                     Long d = sales.getDate();
-                    Log.v("timeStamp",fromTimeStamp +" "+d+" "+toTimeStamp);
                     if (sales.getDate() >= fromTimeStamp && sales.getDate() <= toTimeStamp) {
                         salesArrayList.add(sales);
                         Collections.sort(salesArrayList, new Comparator<Sales>() {
@@ -153,6 +173,12 @@ public class CustomerBalanceDetails extends AppCompatActivity {
 
             }
         });
+    }
+
+    public static boolean isInternetConnected(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
     }
 
 

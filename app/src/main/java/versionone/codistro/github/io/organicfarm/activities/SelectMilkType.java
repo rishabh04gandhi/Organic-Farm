@@ -19,7 +19,7 @@ public class SelectMilkType extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_milk_type);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Select Milk Type");
+        actionBar.setTitle(R.string.milk_type);
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         cow = (Button)findViewById(R.id.cow);
@@ -52,9 +52,9 @@ public class SelectMilkType extends AppCompatActivity {
     public void navigate(View v){
         Intent in = new Intent(SelectMilkType.this,SaleDetails.class);
         if(v.getId() == R.id.cow)
-            in.putExtra("type",R.string.cow);
+            in.putExtra("type","cow");
         else
-            in.putExtra("type",R.string.buffalo);
+            in.putExtra("type","buffalo");
         startActivity(in);
     }
 }

@@ -1,13 +1,18 @@
 package versionone.codistro.github.io.organicfarm.activities;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Environment;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -52,6 +57,21 @@ public class CustomersList extends AppCompatActivity {
         ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
         bar.setTitle("Select Customer");
+
+        //checking if internet is connected
+        if(!isInternetConnected(CustomersList.this)){
+            //AlertDialog to show no internet the action
+            AlertDialog.Builder alert = new AlertDialog.Builder(CustomersList.this);
+            alert.setMessage(R.string.no_internet);
+            alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent in = new Intent(CustomersList.this,AdminPanel.class);
+                    startActivity(in);
+                }
+            });
+            alert.show();
+        }
 
         customersListView = (ListView)findViewById(R.id.customers_list);
         customersList = new ArrayList<>();
@@ -122,6 +142,13 @@ public class CustomersList extends AppCompatActivity {
             }
         });
     }
+
+    public static boolean isInternetConnected(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+    }
+
 
     //genrating
     @RequiresApi(api = Build.VERSION_CODES.M)

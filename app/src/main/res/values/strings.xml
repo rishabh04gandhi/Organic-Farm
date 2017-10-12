@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Organic Farm</string>
-    <string name="scan">स्कैन</string>
+    <string name="scan">स्कैन करें</string>
     <string name="something_wrong">स्कैन नहीं किया गया</string>
     <string name="wrongQr">अमान्य QR कोड</string>
     <string name="scanQr">कोड को स्कैन करें</string>
@@ -18,4 +18,6 @@
     <string name="action_cancelled">कार्रवाई रद्द</string>
     <string name="invalid_quantity">अमान्य मात्रा</string>
     <string name="updated">अपलोड की गई</string>
+    <string name="ok">ठीक</string>
+    <string name="milk_type">दूध का प्रकार चुनें</string>
 </resources>

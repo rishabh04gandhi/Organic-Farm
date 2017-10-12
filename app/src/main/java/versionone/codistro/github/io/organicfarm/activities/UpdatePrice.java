@@ -1,6 +1,10 @@
 package versionone.codistro.github.io.organicfarm.activities;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -34,6 +38,21 @@ public class UpdatePrice extends AppCompatActivity {
         ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
         bar.setTitle("Update Price");
+
+        //checking if internet is connected
+        if(!isInternetConnected(UpdatePrice.this)){
+            //AlertDialog to show no internet the action
+            AlertDialog.Builder alert = new AlertDialog.Builder(UpdatePrice.this);
+            alert.setMessage(R.string.no_internet);
+            alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent in = new Intent(UpdatePrice.this,AdminPanel.class);
+                    startActivity(in);
+                }
+            });
+            alert.show();
+        }
 
         cowMilkPriceEditText = (EditText) findViewById(R.id.cow_milk_price);
         buffaloMilkPriceEditText = (EditText) findViewById(R.id.buffalo_milk_price);
@@ -82,6 +101,13 @@ public class UpdatePrice extends AppCompatActivity {
             }
         });
 
+    }
+
+
+    public static boolean isInternetConnected(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
     }
 
     private void updatePrice() {
