@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.support.annotation.IntegerRes;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +13,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,8 +22,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.concurrent.atomic.DoubleAccumulator;
 
 import versionone.codistro.github.io.organicfarm.R;
 import versionone.codistro.github.io.organicfarm.utilityclasses.Balance;
@@ -49,7 +45,7 @@ public class SaleDetails extends AppCompatActivity {
         setContentView(R.layout.activity_sale_details);
         ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
-        bar.setTitle(R.string.enter_quntity);
+        bar.setTitle(R.string.enter_quantity);
 
         //checking if internet is connected
         if(!isInternetConnected(SaleDetails.this)){

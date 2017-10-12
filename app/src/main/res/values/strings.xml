@@ -9,7 +9,7 @@
     <string name="quantity">मात्रा</string>
     <string name="paid">भुगतान किया</string>
     <string name="deliver">वितरण करे</string>
-    <string name="enter_quntity">मात्रा दर्ज करें</string>
+    <string name="enter_quantity">मात्रा दर्ज करें</string>
     <string name="confirm">कार्रवाई की पुष्टि करें</string>
     <string name="sure">क्या आप पुष्टि करते हैं? </string>
     <string name="yes">हाँ</string>
@@ -17,7 +17,7 @@
     <string name="no_internet">इंटरनेट काम नहीं कर रहा है</string>
     <string name="action_cancelled">कार्रवाई रद्द</string>
     <string name="invalid_quantity">अमान्य मात्रा</string>
-    <string name="updated">अपलोड की गई</string>
-    <string name="ok">ठीक</string>
+    <string name="updated">वितरण सफल हुआ</string>
+    <string name="ok">ठीक है</string>
     <string name="milk_type">दूध का प्रकार चुनें</string>
 </resources>
